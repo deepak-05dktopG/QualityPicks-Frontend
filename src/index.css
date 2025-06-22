@@ -1,0 +1,101 @@
+:root {
+  --primary: #003366;
+  --secondary: #ff6b35;
+  --accent: #ffca28;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--dark);
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-custom {
+  background-color: var(--primary);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--dark);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary) 0%, #004080 100%);
+  color: white;
+  padding: 5rem 0;
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.category-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.03);
+}
+
+.footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 3rem 0;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.social-icons a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb-item a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  color: var(--secondary);
+}
