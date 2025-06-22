@@ -15,7 +15,7 @@ const ProductsPage = () => {
   const searchQuery = new URLSearchParams(location.search).get('search');
   const [isListening, setIsListening] = useState(false);
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [sortBy, setSortBy] = useState('featured');
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [minPrice, setMinPrice] = useState(0);
@@ -65,10 +65,16 @@ const ProductsPage = () => {
 
   // Fetch products from backend API
   useEffect(() => {
+    setLoading(true);
     axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products/items`)
-      .then(res => setProducts(res.data))
-      .catch(err => console.error('Error fetching products:', err));
-
+      .then(res => {
+        setProducts(res.data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching products:', err);
+        setLoading(false);
+      });
     console.log("product length: " + filteredProducts.length);
   }, []);
 
@@ -263,35 +269,122 @@ const ProductsPage = () => {
             <h6> <span className='h4'> {lastSegment.toUpperCase()} /</span>   <span> <Link to="/products/all">ALL PRODUCTS</Link></span></h6>
           }
 
-          {filteredProducts.length < 1 ? (
-            <div className="col-12 text-center">
-              {/* <i className="fas fa-search fa-3x mb-3 text-muted"></i> */}
-              <h1 className='fs-1'>☹️</h1>
-              <h3>  No products found for <span className='h3 text-danger'>{searchTerm}</span></h3>
-              <p className="text-muted">
-                Search for something else.
-              </p>
-              <Link to="/request-product" className="btn btn-primary mt-3">
-                Create a request to add {searchTerm}
-              </Link>
+          {loading ? (
+            <div className="d-flex flex-wrap gap-3 justify-content-center">
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+                <div className="placeholder card-img-top " style={{ minHeight: "180px" }}></div>
+                <div className="card-body">
+                  <h6 className="card-title placeholder-glow">
+                    <span className="placeholder col-8"></span>
+                  </h6>
+                  <p className="card-text placeholder-glow">
+                    <span className="placeholder col-6"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-7"></span>
+                  </p>
+                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                </div>
+              </div>
+
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+                <div className="card-body">
+                  <h6 className="card-title placeholder-glow">
+                    <span className="placeholder col-8"></span>
+                  </h6>
+                  <p className="card-text placeholder-glow">
+                    <span className="placeholder col-6"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-7"></span>
+                  </p>
+                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                </div>
+              </div>
+
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3"  aria-hidden="true">
+                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+                <div className="card-body">
+                  <h6 className="card-title placeholder-glow">
+                    <span className="placeholder col-8"></span>
+                  </h6>
+                  <p className="card-text placeholder-glow">
+                    <span className="placeholder col-6"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-7"></span>
+                  </p>
+                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                </div>
+              </div>
+
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+                <div className="card-body">
+                  <h6 className="card-title placeholder-glow">
+                    <span className="placeholder col-8"></span>
+                  </h6>
+                  <p className="card-text placeholder-glow">
+                    <span className="placeholder col-6"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-7"></span>
+                  </p>
+                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                </div>
+              </div>
+
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+                <div className="card-body">
+                  <h6 className="card-title placeholder-glow">
+                    <span className="placeholder col-8"></span>
+                  </h6>
+                  <p className="card-text placeholder-glow">
+                    <span className="placeholder col-6"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-7"></span>
+                  </p>
+                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                </div>
+              </div>
+
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+                <div className="card-body">
+                  <h6 className="card-title placeholder-glow">
+                    <span className="placeholder col-8"></span>
+                  </h6>
+                  <p className="card-text placeholder-glow">
+                    <span className="placeholder col-6"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-7"></span>
+                  </p>
+                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                </div>
+              </div>
             </div>
-          ) : ("")}
+
+          ) : (
+            <>
+              {
+                filteredProducts.length < 1 ? (
+                  <div className="col-12 text-center">
+                    {/* <i className="fas fa-search fa-3x mb-3 text-muted"></i> */}
+                    <h1 className='fs-1'>☹️</h1>
+                    <h3>  No products found for <span className='h3 text-danger'>{searchTerm}</span></h3>
+                    <p className="text-muted">
+                      Search for something else.
+                    </p>
+                    <Link to="/request-product" className="btn btn-primary mt-3">
+                      Create a request to add {searchTerm}
+                    </Link>
+                  </div>
+                ) : ("")
+              }
+            </>
+          )}
+
 
           {filteredProducts.slice().reverse().map(product => (
 
-
-            // filteredProducts.length === 0 ? (
-            //   <div className="col-12 text-center">
-            //     <i className="fas fa-search fa-3x mb-3 text-muted"></i>
-            //     <h3>No products found</h3> 
-            //     <p className="text-muted">
-            //       Try adjusting your filters or search for something else.
-            //       </p>
-            //       <Link to="/request-product" className="btn btn-primary mt-3">
-            //       Request This Product
-            //       </Link>
-            //       </div>
-            //       ) : 
 
 
             (lastSegment === product.category || lastSegment === "all") && (

@@ -69,9 +69,70 @@ const CartPage = () => {
         <h2 className="mb-4">🛒 Your Cart</h2>
 
         {loading ? (
-          <div className="text-center">
-            <div className="spinner-border text-primary" role="status" />
+          <div className="d-flex flex-wrap gap-3 justify-content-center">
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+              <div className="placeholder card-img-top " style={{ minHeight: "180px" }}></div>
+              <div className="card-body">
+                <h6 className="card-title placeholder-glow">
+                  <span className="placeholder col-8"></span>
+                </h6>
+                <p className="card-text placeholder-glow">
+                  <span className="placeholder col-6"></span>
+                  <span className="placeholder col-4"></span>
+                  <span className="placeholder col-7"></span>
+                </p>
+                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+              </div>
+            </div>
+
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+              <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card-body">
+                <h6 className="card-title placeholder-glow">
+                  <span className="placeholder col-8"></span>
+                </h6>
+                <p className="card-text placeholder-glow">
+                  <span className="placeholder col-6"></span>
+                  <span className="placeholder col-4"></span>
+                  <span className="placeholder col-7"></span>
+                </p>
+                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+              </div>
+            </div>
+
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+              <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card-body">
+                <h6 className="card-title placeholder-glow">
+                  <span className="placeholder col-8"></span>
+                </h6>
+                <p className="card-text placeholder-glow">
+                  <span className="placeholder col-6"></span>
+                  <span className="placeholder col-4"></span>
+                  <span className="placeholder col-7"></span>
+                </p>
+                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+              </div>
+            </div>
+
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
+              <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card-body">
+                <h6 className="card-title placeholder-glow">
+                  <span className="placeholder col-8"></span>
+                </h6>
+                <p className="card-text placeholder-glow">
+                  <span className="placeholder col-6"></span>
+                  <span className="placeholder col-4"></span>
+                  <span className="placeholder col-7"></span>
+                </p>
+                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+              </div>
+            </div>
+
+
           </div>
+
         ) : cartItems.length === 0 ? (
           <div className='d-flex flex-column justify-content-center' style={{ height: "50vh" }}>
             <div className="alert alert-info text-center">
