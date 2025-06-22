@@ -291,7 +291,7 @@ const ContactPage = () => {
                               onChange={handleChange}
                               required
                             ></textarea>
-                            <span className=' d-flex align-items-start '> <span className='border rounded btn btn-sm' > <span onClick={handleVoiceSearch}>{isListening ? <>🔴</> : <>🎙️</>}</span> </span> </span>
+                            {/* <span className=' d-flex align-items-start '> <span className='border rounded btn btn-sm' > <span onClick={handleVoiceSearch}>{isListening ? <>🔴</> : <>🎙️</>}</span> </span> </span> */}
 
                           </div>
                           {errors.message && <div className="invalid-feedback">{errors.message}</div>}

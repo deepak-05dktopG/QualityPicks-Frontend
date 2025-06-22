@@ -333,7 +333,7 @@ const RequestProductPage = () => {
                           onChange={handleChange}
                           placeholder="e.g. I want noise-canceling earbuds with at least 8 hours battery life, waterproof, under ₹3000."
                         ></textarea>
-                        <span className=' d-flex align-items-start '> <span className='border rounded btn btn-sm' > <span onClick={handleVoiceSearch1}>{isListening1 ? <>🔴</> : <>🎙️</>}</span> </span> </span>
+                        {/* <span className=' d-flex align-items-start '> <span className='border rounded btn btn-sm' > <span onClick={handleVoiceSearch1}>{isListening1 ? <>🔴</> : <>🎙️</>}</span> </span> </span> */}
                       </div>
                       {errors.description && <div className="invalid-feedback">{errors.description}</div>}
                     </div>
@@ -391,7 +391,7 @@ const RequestProductPage = () => {
                           onChange={handleChange}
                           placeholder="e.g. I want it to be available on Amazon, should support cash on delivery, color preference is black."
                         ></textarea>
-                        <span className=' d-flex align-items-start '> <span className='border rounded btn btn-sm' > <span onClick={handleVoiceSearch}>{isListening ? <>🔴</> : <>🎙️</>}</span> </span> </span>
+                        {/* <span className=' d-flex align-items-start '> <span className='border rounded btn btn-sm' > <span onClick={handleVoiceSearch}>{isListening ? <>🔴</> : <>🎙️</>}</span> </span> </span> */}
                       </div>
                     </div>
 
