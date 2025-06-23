@@ -27,9 +27,9 @@ const logos = [
 const AffiliateMarquee = () => {
   return (
     <div className="logo-marquee-container ">
-      <h2 className="text-center my-4">Our Affiliate Partners</h2>
+      <h2 data-aos="fade-up" className="text-center my-4">Our Affiliate Partners</h2>
 
-      <div className="logo-track ">
+      <div data-aos="zoom-in" className="logo-track ">
         <ParallaxText baseVelocity={-1.7} >
           {logos.map((logo, index) => (
             <span key={index} className="mx-5">

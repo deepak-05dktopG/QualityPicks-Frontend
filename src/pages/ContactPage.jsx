@@ -151,12 +151,12 @@ const ContactPage = () => {
 
         <div className="row">
           <div className="col-lg-5 mb-4 mb-lg-0">
-            <h1 className="h3 mb-4">Contact Us</h1>
-            <p className="lead mb-4">
+            <h1 data-aos="fade-right" className="h3 mb-4">Contact Us</h1>
+            <p data-aos="fade-right" data-aos-delay="100" className="lead mb-4">
               Have questions about our product recommendations? Want to collaborate with us? We'd love to hear from you!
             </p>
 
-            <div className="card border-0 shadow-sm mb-4">
+            <div data-aos="fade-right" data-aos-delay="150" className="card border-0 shadow-sm mb-4">
               <div className="card-body">
                 <h2 className="h5 mb-3">Our Information</h2>
                 <ul className="list-unstyled mb-0">
@@ -185,7 +185,7 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className="card border-0 shadow-sm">
+            <div data-aos="fade-right" data-aos-delay="200" className="card border-0 shadow-sm">
               <div className="card-body">
                 <h2 className="h5 mb-3">Follow Us</h2>
                 <p className="mb-3">Stay updated with our latest product recommendations and research.</p>
@@ -207,29 +207,30 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="col-lg-7">
+          <div data-aos="fade-up" className="col-lg-7">
             <div className="card border-0 shadow-sm">
               <div className="card-body p-4 p-lg-5">
                 {isSubmitted ? (
                   <div className="text-center py-4">
-                    <div className="mb-4">
+                    <div className="mb-4" data-aos="zoom-in" data-aos-duration="2000">
                       <i className="fas fa-check-circle text-success" style={{ fontSize: '4rem' }}></i>
                     </div>
-                    <h2 className="h4 mb-3">Message Sent Successfully!</h2>
-                    <p className="lead mb-4">
+                    <h2 className="h4 mb-3" data-aos="fade-up">Message Sent Successfully!</h2>
+                    <p className="lead mb-4" data-aos="fade-up" data-aos-delay="200">
                       Thank you for reaching out. We'll get back to you as soon as possible.
                     </p>
                     <button
                       className="btn btn-primary"
                       onClick={() => setIsSubmitted(false)}
+                      data-aos="zoom-in" data-aos-delay="500"
                     >
                       Send Another Message
                     </button>
                   </div>
                 ) : (
                   <>
-                    <h2 className="h4 mb-4">Send Us a Message</h2>
-                    <form onSubmit={handleSubmit} method='POST'>
+                    <h2 data-aos="fade-up" data-aos-delay="50" className="h4 mb-4">Send Us a Message</h2>
+                    <form data-aos="fade-up" data-aos-delay="200" onSubmit={handleSubmit} method='POST'>
                       <div className="row g-3">
                         <div className="col-md-6">
                           <label htmlFor="name" className="form-label">Your Name*</label>
@@ -297,11 +298,12 @@ const ContactPage = () => {
                           {errors.message && <div className="invalid-feedback">{errors.message}</div>}
                         </div>
 
-                        <div className="col-12">
+                        <div className="col-6">
                           <button
                             type="submit"
                             className="btn btn-primary w-100"
                             disabled={isSubmitting}
+                            data-aos="zoom-in"
                           >
                             {isSubmitting ? (
                               <>
@@ -323,11 +325,11 @@ const ContactPage = () => {
 
         {/* FAQ Section */}
         <section className="mt-5 py-5">
-          <h2 className="h3 text-center mb-4">Frequently Asked Questions</h2>
+          <h2 className="h3 text-center mb-4" data-aos="fade-up">Frequently Asked Questions</h2>
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="accordion" id="faqAccordion">
-                <div className="accordion-item mb-3 border-0 shadow-sm">
+                <div data-aos="fade-up" className="accordion-item mb-3 border-0 shadow-sm">
                   <h3 className="accordion-header" id="headingOne">
                     <button
                       className="accordion-button"
@@ -352,7 +354,7 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="accordion-item mb-3 border-0 shadow-sm">
+                <div data-aos="fade-up" className="accordion-item mb-3 border-0 shadow-sm">
                   <h3 className="accordion-header" id="headingTwo">
                     <button
                       className="accordion-button collapsed"
@@ -377,7 +379,7 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="accordion-item mb-3 border-0 shadow-sm">
+                <div data-aos="fade-up" className="accordion-item mb-3 border-0 shadow-sm">
                   <h3 className="accordion-header" id="headingThree">
                     <button
                       className="accordion-button collapsed"
@@ -402,7 +404,7 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="accordion-item border-0 shadow-sm">
+                <div data-aos="fade-up" className="accordion-item border-0 shadow-sm">
                   <h3 className="accordion-header" id="headingFour">
                     <button
                       className="accordion-button collapsed"

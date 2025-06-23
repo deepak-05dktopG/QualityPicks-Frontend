@@ -19,11 +19,11 @@ const HomePage = () => {
 
     try {
       const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/users/get/${userId}`);
-      setUserInfo(res.data); // ✅ Store user data
+      setUserInfo(res.data); // Store user data
 
     } catch (err) {
       console.error("Error fetching user:", err);
-      setUserInfo(null); // ✅ Reset user data on error
+      setUserInfo(null); // Reset user data on error
     }
   };
   //mount for User
@@ -125,9 +125,9 @@ const HomePage = () => {
         <Navbar />
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="container text-center py-5">
+        <div className="container text-center py-4">
           {userInfo && (
-            <div
+            <div data-aos="flip-left"
               className="mx-auto mb-4 p-4 shadow rounded-4 "
               style={{
                 maxWidth: '600px',
@@ -142,12 +142,13 @@ const HomePage = () => {
               </p>
             </div>
           )}
-          <h1 className="display-4 fw-bold mb-4">Quality Products, Thoroughly Researched</h1>
-          <p className="lead mb-4">
+          <h1 className="display-4 fw-bold mb-4" data-aos="fade-up">Quality Products, Thoroughly Researched</h1>
+          <p className="lead mb-4" data-aos="fade-up" data-aos-delay="300">
             We save you time by testing and researching products so you can shop with confidence.
             Every item on our site has been carefully selected for its quality and value.
           </p>
-          <Link to="/products/all" className="btn btn-lg btn-accent border border-warning">
+
+          <Link to="/products/all" data-aos="zoom-in" data-aos-delay="700" className="btn btn-lg btn-accent border border-warning">
             Explore Products
           </Link>
         </div>
@@ -160,9 +161,9 @@ const HomePage = () => {
       {/* How It Works */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center mb-5">How QualityPicks Works</h2>
-          <div className="row g-4">
-            <div className="col-md-4">
+          <h2 className="text-center mb-5" data-aos="fade-up">How QualityPicks Works</h2>
+          <div className="row g-4" style={{ overflowX: 'hidden', scrollbarWidth: 'none' }}>
+            <div className="col-md-4" data-aos="fade-right">
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body text-center p-4">
                   <div className="feature-icon mb-3">
@@ -175,7 +176,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body text-center p-4">
                   <div className="feature-icon mb-3">
@@ -188,7 +189,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" data-aos="fade-left" >
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body text-center p-4">
                   <div className="feature-icon mb-3">
@@ -208,10 +209,10 @@ const HomePage = () => {
       {/* Categories Section */}
       <section className="py-5">
         <div className="container">
-          <h2 className="text-center mb-5">Shop By Category</h2>
+          <h2 className="text-center mb-5" data-aos="fade-up">Shop By Category</h2>
           <div className="row g-4">
             {categories.map((category, index) => (
-              <div key={index} className="col-md-4 col-lg-4 mb-4">
+              <div key={index} className="col-md-4 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                 <Link to={`/products/${category.name}`} className="text-decoration-none">
                   <div className="card category-card h-100 shadow-sm border-0 overflow-hidden">
                     <img
@@ -343,11 +344,11 @@ const HomePage = () => {
       {/* CTA Section */}
       <section className="py-5 bg-secondary text-white">
         <div className="container text-center">
-          <h2 className="mb-4">Looking for a specific product?</h2>
-          <p className="lead mb-4">
+          <h2 className="mb-4" data-aos="fade-down">Looking for a specific product?</h2>
+          <p className="lead mb-4" data-aos="fade-down" data-aos-delay="300">
             Can't find what you're looking for? We're happy to research it for you!
           </p>
-          <Link to="/request-product" className="btn btn-lg btn-accent">
+          <Link to="/request-product" className="btn btn-lg btn-accent" data-aos="zoom-in" data-aos-delay="500">
             Request a Product Review
           </Link>
         </div>

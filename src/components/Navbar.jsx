@@ -2,6 +2,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import { motion, useScroll, useSpring } from "framer-motion";
 
 
 const Navbar = () => {
@@ -40,7 +41,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="navbar  shadow-sm navbar-expand-lg navbar-custom sticky-top">
+    <nav className="navbar z-4  shadow-sm navbar-expand-lg navbar-custom sticky-top">
       <div className="container ">
         <Link className="navbar-brand fw-bold" to="/">
           QualityPicks
@@ -61,7 +62,7 @@ const Navbar = () => {
         </button>
         {/* <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">X</button> */}
 
-        <div className="offcanvas offcanvas-end w-50 d-lg-none" style={{backgroundColor:"#003366"}} data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div className="offcanvas offcanvas-end w-50 d-lg-none" style={{ backgroundColor: "#003366" }} data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
           <div className="offcanvas-header text-white">
             <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">QualityPicks</h5>
             <button type="button" className=" btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -171,15 +172,15 @@ const Navbar = () => {
               <li className=''>
                 {localStorage.getItem("isLoggedIn") === "true" ? (
                   <div className=''>
-                    <button onClick={() => navigate('/cart')} className="btn   btn-outline-warning ">
+                    <button  onClick={() => navigate('/cart')} className="btn   btn-outline-warning ">
                       🛒 My Cart
                     </button>
-                    <button className='btn btn-outline-danger btn-sm  ms-2' onClick={logout}>
+                    <button  className='btn btn-outline-danger btn-sm  ms-2' onClick={logout}>
                       Logout
                     </button>
                   </div>
                 ) :
-                  <button onClick={() => navigate('/login')} className="btn btn-outline-success">
+                  <button  onClick={() => navigate('/login')} className="btn btn-outline-success">
                     Login
                   </button>
                 }
@@ -187,30 +188,6 @@ const Navbar = () => {
             </span>
 
           </ul>
-
-          {/* <form className="d-flex me-3" onSubmit={handleSearch}>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search products..."
-              aria-label="Search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <button className="btn btn-outline-light" type="submit">
-              <i className="fas fa-search"></i>
-            </button>
-          </form> */}
-
-          {/* <Link to="/cart" className="btn btn-outline-light position-relative">
-            <i className="fas fa-shopping-cart"></i>
-            {cartItemCount > 0 && (
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {cartItemCount}
-                <span className="visually-hidden">items in cart</span>
-              </span>
-            )}
-          </Link> */}
         </div>
 
 

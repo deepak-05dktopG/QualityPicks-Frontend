@@ -239,7 +239,7 @@ const ProductsPage = () => {
     <>
       <Navbar />
       <div className='blur-bg sticky-top py-2 bg-light  '>
-        <form className=" container col-12 col-sm-10 col-md-8 col-lg-6 d-flex mt-1" >
+        <form data-aos="zoom-in" data-aos-once="false" data-aos-delay="300" className=" container col-12 col-sm-10 col-md-8 col-lg-6 d-flex mt-1" >
           <input
             className="form-control me-2"
             type="search"
@@ -266,7 +266,7 @@ const ProductsPage = () => {
         <div className="row g-4">
 
           {lastSegment != "all" &&
-            <h6> <span className='h4'> {lastSegment.toUpperCase()} /</span>   <span> <Link to="/products/all">ALL PRODUCTS</Link></span></h6>
+            <h6 data-aos="fade-right" data-aos-once="false" data-aos-delay="300"> <span className='h4'> {lastSegment.toUpperCase()} /</span>   <span> <Link to="/products/all">ALL PRODUCTS</Link></span></h6>
           }
 
           {loading ? (
@@ -301,7 +301,7 @@ const ProductsPage = () => {
                 </div>
               </div>
 
-              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3"  aria-hidden="true">
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
                 <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
                 <div className="card-body">
                   <h6 className="card-title placeholder-glow">
@@ -364,63 +364,42 @@ const ProductsPage = () => {
 
           ) : (
             <>
-              {
-                filteredProducts.length < 1 ? (
-                  <div className="col-12 text-center">
-                    {/* <i className="fas fa-search fa-3x mb-3 text-muted"></i> */}
-                    <h1 className='fs-1'>☹️</h1>
-                    <h3>  No products found for <span className='h3 text-danger'>{searchTerm}</span></h3>
-                    <p className="text-muted">
-                      Search for something else.
-                    </p>
-                    <Link to="/request-product" className="btn btn-primary mt-3">
-                      Create a request to add {searchTerm}
-                    </Link>
-                  </div>
-                ) : ("")
-              }
-            </>
-          )}
+              {filteredProducts.slice().reverse().map(product => (
 
+                (lastSegment === product.category || lastSegment === "all") && (
+                  (
+                    <div data-aos="fade-up" data-aos-once="false" key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+                      <div className="card h-100 shadow-sm">
+                        <div data-aos="zoom-in " data-aos-once="false" className='d-flex w-100 justify-content-between position-absolute' > <span className='p-1 border border-light rounded shadow '> {cartItems.some(item => item._id === product._id) ? <span onClick={() => handleRemove(product._id)} >💖</span> : <span onClick={() => handleAddToCart(product._id)}>🤍</span>} </span>                       <span className=''><img src={product.affiliatefrom} width={30} alt="" /></span></div>
+                        <Link to={`/product/${product._id}`}>
+                          <img
+                            src={product.image}
+                            className="card-img-top"
+                            alt={product.name}
+                            style={{ height: "180px", objectFit: "contain" }}
+                          />
+                        </Link>
 
-          {filteredProducts.slice().reverse().map(product => (
+                        <div className="card-body d-flex flex-column">
+                          <h6 className="card-title">{product.name}</h6>
+                          {/* <span className="badge bg-secondary mb-2">{product.category}</span> */}
+                          <div className='d-flex justify-content-between align-items-center'>
+                            <div className="text-primary fw-bold ">₹{product.price.toFixed(2)}</div>
+                            <div className={` fw-bold ${product.stock > 3 ? 'text-success' : 'text-danger'}`}>
+                              {product.stock > 0 ? `In Stock: ${product.stock}` : 'Out of Stock'}
+                            </div>
+                          </div>
+                          <div className="mb-2">
+                            <span className="text-warning">
+                              {'★'.repeat(Math.round(product.rating))}
+                            </span>
+                            <span className="text-muted ms-2">
+                              ({product.reviewCount} reviews)
+                            </span>
+                          </div>
 
-
-
-            (lastSegment === product.category || lastSegment === "all") && (
-              (
-                <div key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
-                  <div className="card h-100 shadow-sm">
-                    <div className='d-flex w-100 justify-content-between position-absolute' > <span className='p-1 border border-light rounded shadow-sm '> {cartItems.some(item => item._id === product._id) ? <span onClick={() => handleRemove(product._id)}>💖</span> : <span onClick={() => handleAddToCart(product._id)}>🤍</span>} </span>                       <span className=''><img src={product.affiliatefrom} width={30} alt="" /></span></div>
-                    <Link to={`/product/${product._id}`}>
-                      <img
-                        src={product.image}
-                        className="card-img-top"
-                        alt={product.name}
-                        style={{ height: "180px", objectFit: "cover" }}
-                      />
-                    </Link>
-
-                    <div className="card-body d-flex flex-column">
-                      <h6 className="card-title">{product.name}</h6>
-                      {/* <span className="badge bg-secondary mb-2">{product.category}</span> */}
-                      <div className='d-flex justify-content-between align-items-center'>
-                        <div className="text-primary fw-bold ">₹{product.price.toFixed(2)}</div>
-                        <div className={` fw-bold ${product.stock > 3 ? 'text-success' : 'text-danger'}`}>
-                          {product.stock > 0 ? `In Stock: ${product.stock}` : 'Out of Stock'}
-                        </div>
-                      </div>
-                      <div className="mb-2">
-                        <span className="text-warning">
-                          {'★'.repeat(Math.round(product.rating))}
-                        </span>
-                        <span className="text-muted ms-2">
-                          ({product.reviewCount} reviews)
-                        </span>
-                      </div>
-
-                      <p className="card-text small mb-2">{product.description}</p>
-                      {/* {product.features && (
+                          <p className="card-text small mb-2">{product.description}</p>
+                          {/* {product.features && (
                         <ul className="list-unstyled mb-2">
                           {product.features.map((feature, idx) => (
                             <li key={idx} className="small">
@@ -431,19 +410,40 @@ const ProductsPage = () => {
                         </ul>
                       )} */}
 
-                      <Link
-                        to={`/product/${product._id}`}
-                        className="btn btn-primary mt-auto"
-                      >
-                        Explore & Buy Now
-                      </Link>
+                          <Link
+                            to={`/product/${product._id}`}
+                            className="btn btn-primary mt-auto"
+                          >
+                            Explore & Buy Now
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              )
-            )
+                  )
+                )
 
-          ))}
+              ))}
+            </>
+          )}
+
+          {
+            filteredProducts.length < 1 ? (
+              <div className="col-12 text-center">
+                {/* <i className="fas fa-search fa-3x mb-3 text-muted"></i> */}
+                <h1 data-aos="zoom-out" data-aos-duration='3000' data-aos-once="false" className='fs-1'>☹️</h1>
+                <h3 data-aos="fade-up" data-aos-delay="100" data-aos-once="false">  No products found for <span className='h3 text-danger'>{searchTerm}</span></h3>
+                <p data-aos="fade-up" data-aos-delay="200" data-aos-once="false" className="text-muted">
+                  Search for something else.
+                </p>
+                <Link data-aos="zoom-in" data-aos-delay="300" data-aos-once="false" to="/request-product" className="btn btn-primary mt-3">
+                  Create a request to add {searchTerm}
+                </Link>
+              </div>
+            ) : ("")
+          }
+
+
+
 
         </div>
       </div >

@@ -7,12 +7,12 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-6 mb-4 mb-md-0">
-            <h5 className="text-uppercase mb-4">QualityPicks</h5>
-            <p>
+            <h5 data-aos="fade-right" className="text-uppercase mb-4">QualityPicks</h5>
+            <p data-aos="fade-right" data-aos-delay="100">
               We save your time by doing the product research for you.
               Every product on our site has been thoroughly vetted for quality and value.
             </p>
-            <div className="social-icons mt-4">
+            <div data-aos="zoom-in" data-aos-delay="150" className="social-icons mt-4">
               <a href="#" className="me-3"><i className="fab fa-facebook-f"></i></a>
               <a href="#" className="me-3"><i className="fab fa-twitter"></i></a>
               <a href="#" className="me-3"><i className="fab fa-instagram"></i></a>
@@ -21,8 +21,8 @@ const Footer = () => {
           </div>
 
           <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 className="text-uppercase mb-4">Quick Links</h5>
-            <ul className="list-unstyled mb-0">
+            <h5 data-aos="fade-right" className="text-uppercase mb-4">Quick Links</h5>
+            <ul data-aos="fade-right" data-aos-delay="150" className="list-unstyled mb-0">
               <li className="mb-2">
                 <Link to="/" className="text-white text-decoration-none">Home</Link>
               </li>
@@ -44,8 +44,8 @@ const Footer = () => {
           </div>
 
           <div className="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h5 className="text-uppercase mb-4">Categories</h5>
-            <ul className="list-unstyled mb-0">
+            <h5 data-aos="fade-right" className="text-uppercase mb-4">Categories</h5>
+            <ul data-aos="fade-right" data-aos-delay="100" className="list-unstyled mb-0">
               <li className="mb-2">
                 <Link to="/products/electronics" className="text-white text-decoration-none">Electronics</Link>
               </li>
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div  className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         © {new Date().getFullYear()} QualityPicks. All rights reserved.
       </div>
     </footer>

@@ -8,20 +8,24 @@ import axios from 'axios';
 const ProductDetailsPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('description');
 
 
   // READ Product data by ID and Scroll to top when component mounts
   useEffect(() => {
+    setLoading(true);
+
     window.scrollTo(0, 0);
     axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products/item/${id}`) // Call your backend API here
-      .then((res) => setProduct(res.data))
+      .then((res) => {
+        setProduct(res.data);
+        setLoading(false);
+      })
       .catch((err) => console.error("Error fetching product:", err));
 
     console.log("Product ID:", id);
     console.log("Product Data:", product);
-    setLoading(false);
   }, [id]);
 
   //BUY NOW Button Function
@@ -36,11 +40,45 @@ const ProductDetailsPage = () => {
   //Loading Frontend UI
   if (loading) {
     return (
-      <div className="container py-5 text-center">
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
+      <>
+        <Navbar />
+        <div className="container py-5">
+          <div className="row">
+            {/* Left Column - Image */}
+            <div className="col-md-6 mb-4">
+              <div className="placeholder-glow w-100">
+                <div
+                  className="placeholder w-100"
+                  style={{ height: '350px', borderRadius: '8px' }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Right Column - Text Details */}
+            <div className="col-md-6">
+              <h4 className="placeholder-glow">
+                <span className="placeholder col-8"></span>
+              </h4>
+              <p className="placeholder-glow">
+                <span className="placeholder col-6"></span>
+                <span className="placeholder col-4"></span>
+                <span className="placeholder col-5"></span>
+              </p>
+
+              <div className="mb-3 placeholder-glow">
+                <span className="placeholder col-3"></span>
+              </div>
+
+              <div className="mb-4 placeholder-glow">
+                <span className="placeholder col-5"></span>
+              </div>
+
+              <button className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></button>
+            </div>
+          </div>
         </div>
-      </div>
+      </>
+
     );
   }
   //Product Not Found Frontend UI
@@ -81,7 +119,7 @@ const ProductDetailsPage = () => {
                 <div className="carousel-inner">
                   {product.productimages.map((item, index) => (
                     <div key={index} className="carousel-item active" data-bs-interval="2000">
-                      <img src={item} className="card-img-top img-fluid" style={{ objectFit: "cover", maxHeight: "400px" }} alt="" />
+                      <img data-aos="zoom-in" data-aos-delay="100" src={item} className="card-img-top img-fluid" style={{ objectFit: "contain", maxHeight: "400px" }} alt="" />
                     </div>
                   ))}
                 </div>
@@ -99,9 +137,9 @@ const ProductDetailsPage = () => {
 
           {/* Product Info */}
           <div className="col-md-7 mb-4">
-            <h1 className="h2 mb-3">{product.name}</h1>
+            <h1 data-aos="fade-right" className="h2 mb-3">{product.name}</h1>
 
-            <div className="d-flex align-items-center mb-3">
+            <div data-aos="fade-right" data-aos-delay="50" className="d-flex align-items-center mb-3">
               <div className="text-warning me-2">
                 {[...Array(5)].map((_, i) => (
                   <i
@@ -113,25 +151,25 @@ const ProductDetailsPage = () => {
               <span className="text-muted">{product.rating} ({product.reviewCount} reviews) <img src={product.affiliatefrom} width={70} alt="Product From" /></span>
             </div>
 
-            <p className="lead mb-4">{product.description}</p>
+            <p data-aos="fade-right" data-aos-delay="100" className="lead mb-4">{product.description}</p>
 
-            <div className="mb-4">
+            <div data-aos="fade-right" data-aos-delay="300" className="mb-4">
               <h2 className="h4 mb-3">Why We Recommend It</h2>
               <p>{product.details}</p>
             </div>
 
-            <div className="mb-4">
+            <div data-aos="fade-right" data-aos-delay="150" className="mb-4">
               <h3 className="h5 mb-3">Key Features</h3>
               <ul className="list-group list-group-flush">
                 {product.features.map((feature, index) => (
-                  <li key={index} className="list-group-item bg-transparent ps-0">
+                  <li data-aos="fade-right" data-aos-delay={index * 100} key={index} className="list-group-item bg-transparent ps-0">
                     <i className="fas fa-check text-success me-2"></i> {feature}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="d-flex align-items-center mb-4">
+            <div data-aos="fade-left" className="d-flex align-items-center mb-4">
               <h3 className="h2 mb-0 me-3"> ₹{product.price.toFixed(2)}</h3>
               <span className={`badge ${product.stock > 10 ? 'bg-success' : (product.stock > 0 ? 'bg-warning' : 'bg-danger')}`}>
                 {product.stock > 10 ? `In Stock ${product.stock}` : (product.stock > 0 ? 'Low Stock' : 'Out of Stock')}
@@ -147,6 +185,7 @@ const ProductDetailsPage = () => {
                 <i className="fas fa-cart-plus me-2"></i> Add to Cart
               </button> */}
               <button
+                data-aos="zoom-in"
                 className="btn btn-lg btn-secondary"
                 onClick={handleBuyNow}
                 disabled={product.stock === 0}
@@ -158,7 +197,7 @@ const ProductDetailsPage = () => {
         </div>
 
         {/* Tabs Section */}
-        <div className="card border-0 shadow-sm mt-4">
+        <div data-aos="fade-up" data-aos-delay="200" className="card border-0 shadow-sm mt-4">
           <div className="card-header bg-white">
             <ul className="nav nav-tabs card-header-tabs">
               <li className="nav-item">
@@ -189,7 +228,7 @@ const ProductDetailsPage = () => {
                 <h4 className="h5 mt-4 mb-3">Features</h4>
                 <ul>
                   {product.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
+                    <li data-aos="fade-right" data-aos-delay={index*100} key={index}>{feature}</li>
                   ))}
                 </ul>
               </div>
@@ -207,7 +246,7 @@ const ProductDetailsPage = () => {
                     <h4 className="h5 mb-3">Research Findings</h4>
                     <ul className="list-group list-group-flush">
                       {product.research.map((finding, index) => (
-                        <li key={index} className="list-group-item bg-transparent">
+                        <li data-aos="fade-right" data-aos-delay={index*100} key={index} className="list-group-item bg-transparent">
                           <i className="fas fa-clipboard-check text-primary me-2"></i> {finding}
                         </li>
                       ))}
@@ -229,7 +268,7 @@ const ProductDetailsPage = () => {
           <h3 className="h4 mb-4">You Might Also Like</h3>
           <div className="row g-4">
             {/* We would dynamically load similar products here */}
-            <div className="col-12 text-center">
+            <div data-aos="zoom-in" className="col-12 text-center">
               <Link to={`/products/${product.category}`} className="btn btn-outline-primary">
                 View More {product.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} Products
               </Link>

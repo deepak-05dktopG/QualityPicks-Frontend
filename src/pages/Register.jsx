@@ -63,7 +63,7 @@ function Register() {
           <h2 className="fw-bold text-center">QualityPics</h2>
           <h5 className="text-center mt-2">Your Gateway to Quality</h5>
           <p className="text-center mt-3" style={{ fontSize: "1.1rem" }}>
-            We save you time by testing and researching products so you can shop with confidence. Every item on our site has been carefully selected for its quality and value.
+            We save your time by testing and researching products so you can shop with confidence. Every item on our site has been carefully selected for its quality and value.
           </p>
           <div className="mt-auto text-center small" style={{ opacity: 0.8 }}>
             &copy; {new Date().getFullYear()} QualityPics. All rights reserved.
@@ -92,7 +92,7 @@ function Register() {
                 type="text"
                 id="name"
                 className="form-control form-control-lg"
-                placeholder="John Doe"
+                placeholder="your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required

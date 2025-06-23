@@ -66,7 +66,7 @@ const CartPage = () => {
     <>
       <Navbar />
       <div className="container my-5">
-        <h2 className="mb-4">🛒 Your Cart</h2>
+        <h2 data-aos="fade-right" className="mb-4">🛒 Your Cart</h2>
 
         {loading ? (
           <div className="d-flex flex-wrap gap-3 justify-content-center">
@@ -134,19 +134,19 @@ const CartPage = () => {
           </div>
 
         ) : cartItems.length === 0 ? (
-          <div className='d-flex flex-column justify-content-center' style={{ height: "50vh" }}>
-            <div className="alert alert-info text-center">
+          <div className='d-flex flex-column justify-content-center' data-aos="zoom-in" style={{ height: "50vh" }}>
+            <div className="alert alert-info text-center" >
               Your cart is empty. Start adding some products by Clicking 🤍!
             </div>
-            <Link to="/products/all" className="btn btn-lg btn-accent ">
+            <Link data-aos="zoom-in" data-aos-delay="300" to="/products/all" className="btn btn-lg btn-accent ">
               Explore Products
             </Link>
           </div>
         ) : (
           <div className="row g-4">
-            {cartItems.map((item) => (
+            {cartItems.map((item,index) => (
               <div className="col-md-6 col-lg-4" key={item._id}>
-                <div className="card shadow-sm h-100 border-0 rounded-4">
+                <div data-aos="fade-up" data-delay={(index)*100} className="card shadow-sm h-100 border-0 rounded-4">
                   <Link to={`/product/${item._id}`}>
                     <img
                       src={item.image}

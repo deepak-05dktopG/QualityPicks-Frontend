@@ -253,12 +253,12 @@ const RequestProductPage = () => {
           <div className="col-lg-8">
             <div className="card border-0 shadow-sm">
               <div className="card-body p-4 p-md-5">
-                <h1 className="h3 mb-4 text-center">Request a Product Research</h1>
-                <p className="text-muted text-center mb-4">
+                <h1 data-aos="fade-up" className="h3 mb-4 text-center">Request a Product Research</h1>
+                <p data-aos="fade-up" data-aos-delay="200" className="text-muted text-center mb-4">
                   Can't find what you're looking for? Fill out this form, and we'll research the best options for you.
                 </p>
 
-                <form onSubmit={handleSubmit}>
+                <form data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
                   <div className="row g-3">
                     <div className="col-md-6">
                       <label htmlFor="name" className="form-label">Your Name*</label>
@@ -400,6 +400,7 @@ const RequestProductPage = () => {
                         Fields marked with * are required
                       </div>
                       <button
+                        data-aos="zoom-in" data-aos-delay="300"
                         type="submit"
                         className="btn btn-primary"
                         disabled={isSubmitting}
