@@ -84,3 +84,10 @@
   display: flex;
   flex-wrap: nowrap;
 }
+
+
+
+
+.logo-track span:hover {
+  transform: scale(1.05);
+}

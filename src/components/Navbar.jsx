@@ -1,5 +1,5 @@
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { motion, useScroll, useSpring } from "framer-motion";
@@ -72,7 +72,8 @@ const Navbar = () => {
               <span className='d-flex flex-column '>
                 <hr />
                 <li className="nav-item">
-                  <Link className="nav-link " to="/">Home</Link>
+                  <NavLink className={({ isActive }) =>
+                    isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"} to="/">Home</NavLink>
                 </li>
                 <hr />
                 <li className="nav-item dropdown">
@@ -87,32 +88,39 @@ const Navbar = () => {
                     Categories
                   </a>
                   <ul className="dropdown-menu mt-auto mt-sm-2 mt-md-2 mt-lg-5" aria-labelledby="navbarDropdown">
-                    <li><Link className="dropdown-item" to="/products/electronics">Electronics</Link></li>
-                    <li><Link className="dropdown-item" to="/products/home-kitchen">Home & Kitchen</Link></li>
-                    <li><Link className="dropdown-item" to="/products/fashion">Fashion</Link></li>
-                    <li><Link className="dropdown-item" to="/products/beauty">Beauty</Link></li>
-                    <li><Link className="dropdown-item" to="/products/books">Books</Link></li>
+                    <li><NavLink className="dropdown-item" to="/products/electronics">Electronics</NavLink></li>
+                    <li><NavLink className="dropdown-item" to="/products/home-kitchen">Home & Kitchen</NavLink></li>
+                    <li><NavLink className="dropdown-item" to="/products/fashion">Fashion</NavLink></li>
+                    <li><NavLink className="dropdown-item" to="/products/beauty">Beauty</NavLink></li>
+                    <li><NavLink className="dropdown-item" to="/products/books">Books</NavLink></li>
                     <li><hr className="dropdown-divider" /></li>
-                    <li><Link className="dropdown-item" to="/products/all">All Products</Link></li>
+                    <li><NavLink className="dropdown-item" to="/products/all">All Products</NavLink></li>
                   </ul>
                 </li>
                 <hr />
                 <li className="nav-item">
-                  <Link className="nav-link" to="/request-product">Request Product</Link>
+                  <NavLink className={({ isActive }) =>
+                    isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"} to="/request-product">Request Product</NavLink>
                 </li>
                 <hr />
                 <li className="nav-item">
-                  <Link className="nav-link" to="/contact">Contact</Link>
+                  <NavLink className={({ isActive }) =>
+                    isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"} to="/contact">Contact</NavLink>
                 </li>
+                <hr />
+                {localStorage.getItem("isLoggedIn") === "true" && (
+                  <li>
+                    <NavLink to={'/cart'} className={({ isActive }) =>
+                      isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"} > 🛒 My Cart
+                    </NavLink>
+                  </li>
+                )}
                 <hr />
               </span>
               <span>
                 <li className='mt-4'>
                   {localStorage.getItem("isLoggedIn") === "true" ? (
                     <div className='d-flex flex-column  '>
-                      <button onClick={() => navigate('/cart')} className="btn btn-outline-warning ">
-                        🛒 My Cart
-                      </button>
                       <br />
                       <button className='btn btn-outline-danger btn-sm ' onClick={logout}>
                         Logout
@@ -138,7 +146,8 @@ const Navbar = () => {
           <ul className="navbar-nav  mb-2 mb-lg-0 d-flex justify-content-between align-items-center w-100">
             <span className='d-flex'>
               <li className="nav-item">
-                <Link className="nav-link" to="/">Home</Link>
+                <NavLink className={({ isActive }) =>
+                  isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"} to="/">Home</NavLink>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -151,36 +160,41 @@ const Navbar = () => {
                 >
                   Categories
                 </a>
-                <ul className="dropdown-menu mt-auto mt-sm-2 mt-md-2 mt-lg-5" aria-labelledby="navbarDropdown">
-                  <li><Link className="dropdown-item" to="/products/electronics">Electronics</Link></li>
-                  <li><Link className="dropdown-item" to="/products/home-kitchen">Home & Kitchen</Link></li>
-                  <li><Link className="dropdown-item" to="/products/fashion">Fashion</Link></li>
-                  <li><Link className="dropdown-item" to="/products/beauty">Beauty</Link></li>
-                  <li><Link className="dropdown-item" to="/products/books">Books</Link></li>
+                <ul className="dropdown-menu mt-auto mt-sm-2 mt-md-2 " aria-labelledby="navbarDropdown">
+                  <li><NavLink className="dropdown-item" to="/products/electronics">Electronics</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/products/home-kitchen">Home & Kitchen</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/products/fashion">Fashion</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/products/beauty">Beauty</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/products/books">Books</NavLink></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><Link className="dropdown-item" to="/products/all">All Products</Link></li>
+                  <li><NavLink className="dropdown-item" to="/products/all">All Products</NavLink></li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/request-product">Request Product</Link>
+                <NavLink className={({ isActive }) =>
+                  isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"} to="/request-product">Request Product</NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">Contact</Link>
+                <NavLink className={({ isActive }) =>
+                  isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"} to="/contact">Contact</NavLink>
               </li>
+              {localStorage.getItem("isLoggedIn") === "true" && (
+                <li className=" border border-0 ">
+                  <NavLink to={'/cart'} className={({ isActive }) =>
+                    isActive ? "nav-link text-warning fw-bold" : "nav-link text-white"}> 🛒 My Cart</NavLink>
+                </li>
+              )}
             </span>
             <span>
               <li className=''>
                 {localStorage.getItem("isLoggedIn") === "true" ? (
                   <div className=''>
-                    <button  onClick={() => navigate('/cart')} className="btn   btn-outline-warning ">
-                      🛒 My Cart
-                    </button>
-                    <button  className='btn btn-outline-danger btn-sm  ms-2' onClick={logout}>
+                    <button className='btn btn-outline-danger btn-sm  ms-2' onClick={logout}>
                       Logout
                     </button>
                   </div>
                 ) :
-                  <button  onClick={() => navigate('/login')} className="btn btn-outline-success">
+                  <button onClick={() => navigate('/login')} className="btn btn-outline-success">
                     Login
                   </button>
                 }

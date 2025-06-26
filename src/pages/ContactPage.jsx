@@ -151,60 +151,80 @@ const ContactPage = () => {
 
         <div className="row">
           <div className="col-lg-5 mb-4 mb-lg-0">
-            <h1 data-aos="fade-right" className="h3 mb-4">Contact Us</h1>
-            <p data-aos="fade-right" data-aos-delay="100" className="lead mb-4">
-              Have questions about our product recommendations? Want to collaborate with us? We'd love to hear from you!
-            </p>
+            <div className="mb-5">
+              <h1 data-aos="fade-right" className="display-6 fw-bold mb-3 text-primary">
+                📬 Get in Touch with Us
+              </h1>
+              <p
+                data-aos="fade-right"
+                data-aos-delay="100"
+                className=" text-muted"
+                style={{ maxWidth: "700px" }}
+              >
+                Have questions about our recommendations? Interested in partnerships or feedback?
+                We're always happy to connect. Drop us a message — let’s make smarter shopping together!
+              </p>
+            </div>
+
 
             <div data-aos="fade-right" data-aos-delay="150" className="card border-0 shadow-sm mb-4">
               <div className="card-body">
-                <h2 className="h5 mb-3">Our Information</h2>
+                <h2 className="h5 mb-4 fw-bold text-primary">📌 Contact Information</h2>
                 <ul className="list-unstyled mb-0">
-                  <li className="d-flex mb-3">
-                    <i className="fas fa-envelope text-primary me-3 mt-1"></i>
+                  <li className="d-flex align-items-start gap-3 mb-4">
+                    <div className="fs-5 text-primary">
+                      <i className="fas fa-envelope"></i>
+                    </div>
                     <div>
-                      <h3 className="h6 mb-1">Email Address</h3>
-                      <p className="mb-0">support@qualitypicks.com</p>
+                      <h6 className="fw-semibold mb-1">Email</h6>
+                      <p className="mb-0 text-muted">support@qualitypicks.com</p>
                     </div>
                   </li>
-                  <li className="d-flex mb-3">
-                    <i className="fas fa-phone text-primary me-3 mt-1"></i>
+                  <li className="d-flex align-items-start gap-3 mb-4">
+                    <div className="fs-5 text-primary">
+                      <i className="fas fa-phone"></i>
+                    </div>
                     <div>
-                      <h3 className="h6 mb-1">Phone Number</h3>
-                      <p className="mb-0">9025454148</p>
+                      <h6 className="fw-semibold mb-1">Phone</h6>
+                      <p className="mb-0 text-muted">+91 90254 54148</p>
                     </div>
                   </li>
-                  <li className="d-flex">
-                    <i className="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                  <li className="d-flex align-items-start gap-3">
+                    <div className="fs-5 text-primary">
+                      <i className="fas fa-map-marker-alt"></i>
+                    </div>
                     <div>
-                      <h3 className="h6 mb-1">Office Address</h3>
-                      <p className="mb-0">address<br /></p>
+                      <h6 className="fw-semibold mb-1">Address</h6>
+                      <p className="mb-0 text-muted">123, Quality Street, Chennai, Tamil Nadu</p>
                     </div>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div data-aos="fade-right" data-aos-delay="200" className="card border-0 shadow-sm">
+
+            <div data-aos="fade-right" data-aos-delay="200" className="card border-0 shadow-sm rounded-4">
               <div className="card-body">
-                <h2 className="h5 mb-3">Follow Us</h2>
-                <p className="mb-3">Stay updated with our latest product recommendations and research.</p>
-                <div className="d-flex gap-3">
-                  <a href="#" className="btn btn-outline-primary">
-                    <i className="fab fa-facebook-f"></i>
+                <h2 className="h5 fw-bold mb-3 text-primary">📲 Follow Us</h2>
+                <p className="mb-4 text-muted">Stay updated with our latest product recommendations and research insights.</p>
+
+                <div className="d-flex gap-3 justify-content-start flex-wrap">
+                  <a href="#" className="btn btn-light border shadow-sm rounded-circle p-3 d-flex align-items-center justify-content-center social-icon-hover">
+                    <i className="fab fa-facebook-f text-primary fs-5"></i>
                   </a>
-                  <a href="#" className="btn btn-outline-primary">
-                    <i className="fab fa-twitter"></i>
+                  <a href="#" className="btn btn-light border shadow-sm rounded-circle p-3 d-flex align-items-center justify-content-center social-icon-hover">
+                    <i className="fab fa-twitter text-info fs-5"></i>
                   </a>
-                  <a href="#" className="btn btn-outline-primary">
-                    <i className="fab fa-instagram"></i>
+                  <a href="#" className="btn btn-light border shadow-sm rounded-circle p-3 d-flex align-items-center justify-content-center social-icon-hover">
+                    <i className="fab fa-instagram text-danger fs-5"></i>
                   </a>
-                  <a href="#" className="btn btn-outline-primary">
-                    <i className="fab fa-pinterest"></i>
+                  <a href="#" className="btn btn-light border shadow-sm rounded-circle p-3 d-flex align-items-center justify-content-center social-icon-hover">
+                    <i className="fab fa-pinterest text-danger fs-5"></i>
                   </a>
                 </div>
               </div>
             </div>
+
           </div>
 
           <div data-aos="fade-up" className="col-lg-7">
@@ -229,7 +249,13 @@ const ContactPage = () => {
                   </div>
                 ) : (
                   <>
-                    <h2 data-aos="fade-up" data-aos-delay="50" className="h4 mb-4">Send Us a Message</h2>
+                    <h2
+                      data-aos="fade-up"
+                      data-aos-delay="50"
+                      className="h4 mb-4 fw-bold text-primary text-uppercase letter-spacing-1"
+                    >
+                      📬 Send Us a Message
+                    </h2>
                     <form data-aos="fade-up" data-aos-delay="200" onSubmit={handleSubmit} method='POST'>
                       <div className="row g-3">
                         <div className="col-md-6">
@@ -325,7 +351,12 @@ const ContactPage = () => {
 
         {/* FAQ Section */}
         <section className="mt-5 py-5">
-          <h2 className="h3 text-center mb-4" data-aos="fade-up">Frequently Asked Questions</h2>
+          <h2
+            className="h3 text-center mb-4 fw-bold text-primary"
+            data-aos="fade-up"
+          >
+            ❓ Frequently Asked Questions
+          </h2>
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="accordion" id="faqAccordion">

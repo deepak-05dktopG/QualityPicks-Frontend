@@ -121,27 +121,45 @@ const HomePage = () => {
 
   //*************Frontend UI******************************************************************************************/
   return (
-    <div>
-        <Navbar />
+    <div >
+      <Navbar />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container text-center py-4">
           {userInfo && (
-            <div data-aos="flip-left"
-              className="mx-auto mb-4 p-4 shadow rounded-4 "
+            <div
+              data-aos="flip-right"
+              className="mx-auto mb-5 p-4 bg-dark text-white rounded-4 shadow-lg"
               style={{
-                maxWidth: '600px',
-                borderLeft: '6px solid #0d6efd',
+                maxWidth: '700px',
+                background: 'linear-gradient(135deg, #0d6efd 0%, #020d1f 100%)',
+                boxShadow: '0 0 20px rgba(0,0,0,0.3)',
               }}
             >
-              <h4 className="fw-semibold mb-2 text-light">
-                👋 Hello, <span className="text-warning">{userInfo.name.toUpperCase()} </span>!
-              </h4>
-              <p className="text-secondary mb-0" style={{ fontSize: '1rem' }}>
-                Ready to discover smart shopping choices? We've handpicked the best for you. 🛍️
-              </p>
+              <div className="d-flex flex-column flex-md-row align-items-center gap-3">
+                <div
+                  className="bg-white text-dark d-flex align-items-center justify-content-center rounded-circle"
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    fontSize: '1.5rem',
+                    boxShadow: '0 0 10px rgba(255,255,255,0.3)',
+                  }}
+                >
+                  🛍️
+                </div>
+                <div className="text-center text-md-start">
+                  <h4 className="fw-bold mb-1">
+                    Welcome Back, <span className="text-warning">{userInfo.name.toUpperCase()}</span>
+                  </h4>
+                  <p className="mb-0 text-light small">
+                    Your smart shopping assistant is ready. Let’s explore top picks just for you. ✨
+                  </p>
+                </div>
+              </div>
             </div>
           )}
+
           <h1 className="display-4 fw-bold mb-4" data-aos="fade-up">Quality Products, Thoroughly Researched</h1>
           <p className="lead mb-4" data-aos="fade-up" data-aos-delay="300">
             We save you time by testing and researching products so you can shop with confidence.
@@ -161,69 +179,119 @@ const HomePage = () => {
       {/* How It Works */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center mb-5" data-aos="fade-up">How QualityPicks Works</h2>
+          <h2
+            className="text-center mb-5 fw-bold display-6 text-primary"
+            data-aos="fade-up"
+            style={{ letterSpacing: '1px' }}
+          >
+            🛍️ How <span className="text-warning">QualityPicks</span> Works
+          </h2>
           <div className="row g-4" style={{ overflowX: 'hidden', scrollbarWidth: 'none' }}>
-            <div className="col-md-4" data-aos="fade-right">
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="card-body text-center p-4">
-                  <div className="feature-icon mb-3">
-                    <i className="fas fa-search"></i>
+            {[
+              {
+                icon: "fas fa-search",
+                title: "Research",
+                desc: "We spend hours researching products, reading reviews, and testing items to find the best ones.",
+                aos: "fade-right",
+                delay: 0,
+                bg: "bg-primary-subtle text-primary"
+              },
+              {
+                icon: "fas fa-star",
+                title: "Curate",
+                desc: "Only products that meet our quality standards make it to our site, saving you from endless scrolling.",
+                aos: "fade-up",
+                delay: 200,
+                bg: "bg-warning-subtle text-warning"
+              },
+              {
+                icon: "fas fa-bag-shopping",
+                title: "Shop Confidently",
+                desc: "When you purchase through our links, you get the best products and we earn a small Affiliate commission.",
+                aos: "fade-left",
+                delay: 0,
+                bg: "bg-success-subtle text-success"
+              }
+            ].map((feature, idx) => (
+              <div className="col-md-4" data-aos={feature.aos} data-aos-delay={feature.delay} key={idx}>
+                <div className={`card h-100 border-0 shadow rounded-4 ${feature.bg} position-relative`}>
+                  <div className="card-body text-center px-4 py-5">
+                    <div className="feature-icon mb-4">
+                      <i className={`${feature.icon} fs-2`}></i>
+                    </div>
+                    <h3 className="h5 fw-bold mb-3">{feature.title}</h3>
+                    <p className="text-muted">{feature.desc}</p>
                   </div>
-                  <h3 className="h5 card-title">Research</h3>
-                  <p className="card-text">
-                    We spend hours researching products, reading reviews, and testing items to find the best ones.
-                  </p>
+                  <div
+                    className="position-absolute top-0 start-50 translate-middle-x"
+                    style={{
+                      width: "70px",
+                      height: "6px",
+                      backgroundColor: "#0d6efd",
+                      borderRadius: "0 0 10px 10px",
+                    }}
+                  ></div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="card-body text-center p-4">
-                  <div className="feature-icon mb-3">
-                    <i className="fas fa-check-circle"></i>
-                  </div>
-                  <h3 className="h5 card-title">Curate</h3>
-                  <p className="card-text">
-                    Only products that meet our quality standards make it to our site, saving you from endless scrolling.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4" data-aos="fade-left" >
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="card-body text-center p-4">
-                  <div className="feature-icon mb-3">
-                    <i className="fas fa-tag"></i>
-                  </div>
-                  <h3 className="h5 card-title">Shop Confidently</h3>
-                  <p className="card-text">
-                    When you purchase through our links, you get the best products and we earn a small Affiliate commission.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
+
         </div>
       </section>
 
       {/* Categories Section */}
       <section className="py-5">
         <div className="container">
-          <h2 className="text-center mb-5" data-aos="fade-up">Shop By Category</h2>
+          <h2
+            className="text-center fw-bold mb-5 text-primary display-6"
+            data-aos="fade-up"
+            style={{ letterSpacing: "0.5px" }}
+          >
+            🛍️ Explore by Category
+          </h2>
+
           <div className="row g-4">
             {categories.map((category, index) => (
-              <div key={index} className="col-md-4 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay={`${index * 100}`}>
-                <Link to={`/products/${category.name}`} className="text-decoration-none">
-                  <div className="card category-card h-100 shadow-sm border-0 overflow-hidden">
-                    <img
-                      src={category.image}
-                      alt={category.name}
-                      className="card-img-top category-image"
-                      style={{ height: "200px", objectFit: "cover" }}
-                    />
-                    <div className="card-body">
-                      <h3 className="h5 card-title">{category.name}</h3>
-                      <p className="card-text text-muted">{category.description}</p>
+              <div
+                key={index}
+                className="col-md-6 col-lg-4"
+                data-aos="zoom-in-up"
+                data-aos-delay={`${index * 100}`}
+              >
+                <Link
+                  to={`/products/${category.name}`}
+                  className="text-decoration-none"
+                >
+                  <div
+                    className="card h-100 shadow border-0 overflow-hidden category-hover"
+                    style={{ borderRadius: "16px", transition: "transform 0.3s ease" }}
+                  >
+                    <div className="position-relative">
+                      <img
+                        src={category.image}
+                        alt={category.name}
+                        className="card-img-top"
+                        style={{
+                          height: "220px",
+                          objectFit: "cover",
+                          filter: "brightness(90%)",
+                        }}
+                      />
+                      <div
+                        className="position-absolute top-0 end-0 bg-dark bg-opacity-50 text-white px-3 py-1 rounded-start"
+                        style={{ fontSize: "0.85rem", fontWeight: "500" }}
+                      >
+                        {category.name}
+                      </div>
+                    </div>
+
+                    <div className="card-body text-center">
+                      <h5 className="card-title fw-bold text-dark">
+                        {category.name}
+                      </h5>
+                      <p className="card-text text-muted small">
+                        {category.description}
+                      </p>
                     </div>
                   </div>
                 </Link>
@@ -231,6 +299,7 @@ const HomePage = () => {
             ))}
           </div>
         </div>
+
       </section>
 
       {/* Testimonials */}
@@ -342,16 +411,27 @@ const HomePage = () => {
       </section> */}
 
       {/* CTA Section */}
-      <section className="py-5 bg-secondary text-white">
-        <div className="container text-center">
-          <h2 className="mb-4" data-aos="fade-down">Looking for a specific product?</h2>
-          <p className="lead mb-4" data-aos="fade-down" data-aos-delay="300">
-            Can't find what you're looking for? We're happy to research it for you!
+      <section className="py-5 text-white">
+        <div className="container text-center py-5 bg-light rounded-4 shadow" data-aos="fade-up">
+          <h2 className="fw-bold mb-3 text-primary" data-aos="fade-down">
+            🧐 Looking for a Specific Product?
+          </h2>
+
+          <p className="lead text-muted mb-4" data-aos="fade-down" data-aos-delay="200">
+            Can't find what you're searching for? Let us help — we’ll research and review it just for you!
           </p>
-          <Link to="/request-product" className="btn btn-lg btn-accent" data-aos="zoom-in" data-aos-delay="500">
-            Request a Product Review
+
+          <Link
+            to="/request-product"
+            className="btn btn-lg btn-warning px-4 py-2 fw-semibold shadow-sm"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            style={{ borderRadius: "12px", letterSpacing: "0.5px" }}
+          >
+            🔍 Request a Product Review
           </Link>
         </div>
+
       </section>
       <Footer />
     </div>

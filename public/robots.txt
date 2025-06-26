@@ -4,6 +4,9 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+Sitemap: https://qualitypicks.vercel.app/sitemap.xml
+
+
 User-agent: Twitterbot
 Allow: /
 

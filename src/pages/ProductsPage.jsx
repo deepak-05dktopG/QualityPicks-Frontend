@@ -270,155 +270,180 @@ const ProductsPage = () => {
           }
 
           {loading ? (
-            <div className="d-flex flex-wrap gap-3 justify-content-center">
-              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-                <div className="placeholder card-img-top " style={{ minHeight: "180px" }}></div>
+            <div className="d-flex flex-wrap gap-3 justify-content-around">
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+                <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
                 <div className="card-body">
                   <h6 className="card-title placeholder-glow">
-                    <span className="placeholder col-8"></span>
+                    <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                   </h6>
                   <p className="card-text placeholder-glow">
-                    <span className="placeholder col-6"></span>
-                    <span className="placeholder col-4"></span>
-                    <span className="placeholder col-7"></span>
+                    <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                    <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                    <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                   </p>
-                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                  <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
                 </div>
               </div>
 
-              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+                <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
                 <div className="card-body">
                   <h6 className="card-title placeholder-glow">
-                    <span className="placeholder col-8"></span>
+                    <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                   </h6>
                   <p className="card-text placeholder-glow">
-                    <span className="placeholder col-6"></span>
-                    <span className="placeholder col-4"></span>
-                    <span className="placeholder col-7"></span>
+                    <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                    <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                    <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                   </p>
-                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                  <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
                 </div>
               </div>
 
-              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+                <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
                 <div className="card-body">
                   <h6 className="card-title placeholder-glow">
-                    <span className="placeholder col-8"></span>
+                    <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                   </h6>
                   <p className="card-text placeholder-glow">
-                    <span className="placeholder col-6"></span>
-                    <span className="placeholder col-4"></span>
-                    <span className="placeholder col-7"></span>
+                    <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                    <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                    <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                   </p>
-                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                  <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
                 </div>
               </div>
 
-              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+                <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
                 <div className="card-body">
                   <h6 className="card-title placeholder-glow">
-                    <span className="placeholder col-8"></span>
+                    <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                   </h6>
                   <p className="card-text placeholder-glow">
-                    <span className="placeholder col-6"></span>
-                    <span className="placeholder col-4"></span>
-                    <span className="placeholder col-7"></span>
+                    <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                    <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                    <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                   </p>
-                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                  <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
                 </div>
               </div>
 
-              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+                <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
                 <div className="card-body">
                   <h6 className="card-title placeholder-glow">
-                    <span className="placeholder col-8"></span>
+                    <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                   </h6>
                   <p className="card-text placeholder-glow">
-                    <span className="placeholder col-6"></span>
-                    <span className="placeholder col-4"></span>
-                    <span className="placeholder col-7"></span>
+                    <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                    <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                    <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                   </p>
-                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                  <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
                 </div>
               </div>
 
-              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-                <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+              <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+                <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
                 <div className="card-body">
                   <h6 className="card-title placeholder-glow">
-                    <span className="placeholder col-8"></span>
+                    <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                   </h6>
                   <p className="card-text placeholder-glow">
-                    <span className="placeholder col-6"></span>
-                    <span className="placeholder col-4"></span>
-                    <span className="placeholder col-7"></span>
+                    <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                    <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                    <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                   </p>
-                  <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                  <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
                 </div>
               </div>
             </div>
-
           ) : (
             <>
               {filteredProducts.slice().reverse().map(product => (
 
                 (lastSegment === product.category || lastSegment === "all") && (
                   (
-                    <div data-aos="fade-up" data-aos-once="false" key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
-                      <div className="card h-100 shadow-sm">
-                        <div data-aos="zoom-in " data-aos-once="false" className='d-flex w-100 justify-content-between position-absolute' > <span className='p-1 border border-light rounded shadow '> {cartItems.some(item => item._id === product._id) ? <span onClick={() => handleRemove(product._id)} >💖</span> : <span onClick={() => handleAddToCart(product._id)}>🤍</span>} </span>                       <span className=''><img src={product.affiliatefrom} width={30} alt="" /></span></div>
-                        <Link to={`/product/${product._id}`}>
-                          <img
-                            src={product.image}
-                            className="card-img-top"
-                            alt={product.name}
-                            style={{ height: "180px", objectFit: "contain" }}
-                          />
+                    <div
+                      data-aos="fade-up"
+                      data-aos-once="false"
+                      key={product._id}
+                      className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+                    >
+                      <div className="card border-0 shadow-sm rounded-4 h-100 overflow-hidden position-relative">
+                        {/* Wishlist & Brand */}
+                        <div
+                          data-aos="zoom-in"
+                          data-aos-once="false"
+                          className="d-flex justify-content-between align-items-center p-2 position-absolute w-100"
+                          style={{ top: 0, left: 0, zIndex: 2 }}
+                        >
+                          <span
+                            className="bg-white shadow-sm p-1 rounded-circle"
+                            style={{ cursor: "pointer" }}
+                          >
+                            {cartItems.some(item => item._id === product._id) ? (
+                              <span onClick={() => handleRemove(product._id)}>💖</span>
+                            ) : (
+                              <span onClick={() => handleAddToCart(product._id)}>🤍</span>
+                            )}
+                          </span>
+                          <img src={product.affiliatefrom} width={30} alt="" />
+                        </div>
+
+                        {/* Image */}
+                        <Link to={`/product/${product._id}`} className="position-relative">
+                          <div
+                            style={{
+                              height: "180px",
+                              backgroundImage: `linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(${product.image})`,
+                              backgroundSize: "contain",
+                              backgroundPosition: "center",
+                              backgroundRepeat: "no-repeat",
+                            }}
+                            className="w-100"
+                          ></div>
                         </Link>
 
-                        <div className="card-body d-flex flex-column">
-                          <h6 className="card-title">{product.name}</h6>
-                          {/* <span className="badge bg-secondary mb-2">{product.category}</span> */}
-                          <div className='d-flex justify-content-between align-items-center'>
-                            <div className="text-primary fw-bold ">₹{product.price.toFixed(2)}</div>
-                            <div className={` fw-bold ${product.stock > 3 ? 'text-success' : 'text-danger'}`}>
-                              {product.stock > 0 ? `In Stock: ${product.stock}` : 'Out of Stock'}
+                        {/* Content */}
+                        <div className="card-body d-flex flex-column p-3 bg-light-subtle">
+                          <h6 className="card-title text-truncate text-dark-emphasis fw-semibold">
+                            {product.name}
+                          </h6>
+
+                          <div className="d-flex justify-content-between align-items-center mb-2">
+                            <div className="text-primary fw-bold fs-6">
+                              ₹{product.price.toFixed(2)}
+                            </div>
+                            <div className={`fw-semibold small ${product.stock > 3 ? 'text-success' : 'text-danger'}`}>
+                              {product.stock > 0 ? `Stock: ${product.stock}` : 'Out of Stock'}
                             </div>
                           </div>
+
                           <div className="mb-2">
                             <span className="text-warning">
-                              {'★'.repeat(Math.round(product.rating))}
+                              {'★'.repeat(Math.round(product.rating))}{" "}
                             </span>
-                            <span className="text-muted ms-2">
-                              ({product.reviewCount} reviews)
-                            </span>
+                            <span className="text-muted small">({product.reviewCount} reviews)</span>
                           </div>
 
-                          <p className="card-text small mb-2">{product.description}</p>
-                          {/* {product.features && (
-                        <ul className="list-unstyled mb-2">
-                          {product.features.map((feature, idx) => (
-                            <li key={idx} className="small">
-                              <i className="bi bi-check-circle text-success me-1"></i>
-                              ✔️{feature}
-                            </li>
-                          ))}
-                        </ul>
-                      )} */}
+                          <p className="card-text small text-secondary mb-2 text-truncate">
+                            {product.description}
+                          </p>
 
                           <Link
                             to={`/product/${product._id}`}
-                            className="btn btn-primary mt-auto"
+                            className="btn btn-accent mt-auto w-100 fw-semibold shadow-sm"
                           >
                             Explore & Buy Now
                           </Link>
                         </div>
                       </div>
                     </div>
+
                   )
                 )
 

@@ -69,68 +69,96 @@ const CartPage = () => {
         <h2 data-aos="fade-right" className="mb-4">🛒 Your Cart</h2>
 
         {loading ? (
-          <div className="d-flex flex-wrap gap-3 justify-content-center">
-            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-              <div className="placeholder card-img-top " style={{ minHeight: "180px" }}></div>
+          <div className="d-flex flex-wrap gap-3 justify-content-around">
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+              <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
               <div className="card-body">
                 <h6 className="card-title placeholder-glow">
-                  <span className="placeholder col-8"></span>
+                  <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                 </h6>
                 <p className="card-text placeholder-glow">
-                  <span className="placeholder col-6"></span>
-                  <span className="placeholder col-4"></span>
-                  <span className="placeholder col-7"></span>
+                  <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                  <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                  <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                 </p>
-                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
               </div>
             </div>
 
-            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-              <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+              <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
               <div className="card-body">
                 <h6 className="card-title placeholder-glow">
-                  <span className="placeholder col-8"></span>
+                  <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                 </h6>
                 <p className="card-text placeholder-glow">
-                  <span className="placeholder col-6"></span>
-                  <span className="placeholder col-4"></span>
-                  <span className="placeholder col-7"></span>
+                  <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                  <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                  <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                 </p>
-                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
               </div>
             </div>
 
-            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-              <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+              <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
               <div className="card-body">
                 <h6 className="card-title placeholder-glow">
-                  <span className="placeholder col-8"></span>
+                  <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                 </h6>
                 <p className="card-text placeholder-glow">
-                  <span className="placeholder col-6"></span>
-                  <span className="placeholder col-4"></span>
-                  <span className="placeholder col-7"></span>
+                  <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                  <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                  <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                 </p>
-                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
               </div>
             </div>
 
-            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3" aria-hidden="true">
-              <div className="card-img-top placeholder" style={{ height: "180px" }}></div>
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+              <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
               <div className="card-body">
                 <h6 className="card-title placeholder-glow">
-                  <span className="placeholder col-8"></span>
+                  <span className="placeholder col-8 bg-info bg-opacity-50"></span>
                 </h6>
                 <p className="card-text placeholder-glow">
-                  <span className="placeholder col-6"></span>
-                  <span className="placeholder col-4"></span>
-                  <span className="placeholder col-7"></span>
+                  <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                  <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                  <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
                 </p>
-                <a className="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+                <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
               </div>
             </div>
 
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+              <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
+              <div className="card-body">
+                <h6 className="card-title placeholder-glow">
+                  <span className="placeholder col-8 bg-info bg-opacity-50"></span>
+                </h6>
+                <p className="card-text placeholder-glow">
+                  <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                  <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                  <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
+                </p>
+                <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
+              </div>
+            </div>
 
+            <div className="card placeholder-glow col-12 col-sm-6 col-md-4 col-lg-3 border-info shadow-sm" aria-hidden="true">
+              <div className="placeholder card-img-top bg-primary bg-opacity-25" style={{ minHeight: "180px", borderRadius: "8px" }}></div>
+              <div className="card-body">
+                <h6 className="card-title placeholder-glow">
+                  <span className="placeholder col-8 bg-info bg-opacity-50"></span>
+                </h6>
+                <p className="card-text placeholder-glow">
+                  <span className="placeholder col-6 bg-success bg-opacity-50"></span>
+                  <span className="placeholder col-4 bg-warning bg-opacity-50"></span>
+                  <span className="placeholder col-7 bg-danger bg-opacity-50"></span>
+                </p>
+                <a className="btn btn-primary disabled placeholder col-12 bg-opacity-75" aria-disabled="true"></a>
+              </div>
+            </div>
           </div>
 
         ) : cartItems.length === 0 ? (
@@ -144,21 +172,39 @@ const CartPage = () => {
           </div>
         ) : (
           <div className="row g-4">
-            {cartItems.map((item,index) => (
+            {cartItems.map((item, index) => (
               <div className="col-md-6 col-lg-4" key={item._id}>
-                <div data-aos="fade-up" data-delay={(index)*100} className="card shadow-sm h-100 border-0 rounded-4">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                  className="card h-100 border-0 rounded-4 shadow-sm position-relative overflow-hidden"
+                
+                >
                   <Link to={`/product/${item._id}`}>
                     <img
                       src={item.image}
                       alt={item.name}
                       className="card-img-top"
-                      style={{ height: '220px', objectFit: 'cover', borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' }}
+                      style={{
+                        height: '220px',
+                        objectFit: 'cover',
+                        borderTopLeftRadius: '0.75rem',
+                        borderTopRightRadius: '0.75rem',
+                        filter: 'brightness(0.95)',
+                      }}
                     />
                   </Link>
+
                   <div className="card-body d-flex flex-column justify-content-between">
                     <div>
-                      <h5 className="card-title fw-semibold">{item.name}</h5>
-                      <p className="text-muted mb-2">Only ₹{item.price}</p>
+                      <h6
+                        className="card-title fw-semibold text-truncate"
+                        style={{ maxWidth: '100%' }}
+                        title={item.name}
+                      >
+                        🛍️ {item.name}
+                      </h6>
+                      <p className="text-dark mb-2 fw-bold">₹{item.price.toFixed(2)}</p>
                     </div>
 
                     <div className="d-flex flex-column gap-2 mt-3">
@@ -170,7 +216,7 @@ const CartPage = () => {
                       </button>
 
                       <Link to={`/product/${item._id}`}>
-                        <button className="btn btn-warning w-100">
+                        <button className="btn btn-primary w-100 shadow-sm">
                           🔍 View Details & Buy
                         </button>
                       </Link>
@@ -180,6 +226,7 @@ const CartPage = () => {
               </div>
             ))}
           </div>
+
 
         )}
       </div>

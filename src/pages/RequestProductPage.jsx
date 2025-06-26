@@ -253,10 +253,22 @@ const RequestProductPage = () => {
           <div className="col-lg-8">
             <div className="card border-0 shadow-sm">
               <div className="card-body p-4 p-md-5">
-                <h1 data-aos="fade-up" className="h3 mb-4 text-center">Request a Product Research</h1>
-                <p data-aos="fade-up" data-aos-delay="200" className="text-muted text-center mb-4">
-                  Can't find what you're looking for? Fill out this form, and we'll research the best options for you.
+                <h1
+                  data-aos="fade-up"
+                  className="display-6 fw-bold text-center text-primary mb-3"
+                >
+                  🔎 Request a Product Review
+                </h1>
+
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  className=" text-secondary text-center mb-4 px-2"
+                >
+                  Didn’t find what you were looking for? Let us do the digging for you!
+                  Fill out the form below, and we’ll research and recommend the best picks tailored to your needs. 💡
                 </p>
+
 
                 <form data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
                   <div className="row g-3">
