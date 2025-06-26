@@ -1,9 +1,9 @@
 import React from "react";
 import ParallaxText from "../lib/VelocityScroll";
-import flipcartlogo from '../assets/flipkart.svg';
-import myntralogo from '../assets/myntra.svg';
-import meeshologo from '../assets/Meesho Logo.jpg'
-import amazonlogo from '../assets/amazonin-logo.jpg'
+import flipcartlogo from '/assets/flipkart.svg';
+import myntralogo from '/assets/myntra.svg';
+import meeshologo from '/assets/Meesho Logo.jpg'
+import amazonlogo from '/assets/amazonin-logo.jpg'
 
 const logos = [
   {

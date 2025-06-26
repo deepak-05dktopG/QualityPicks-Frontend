@@ -419,10 +419,10 @@ const AdminPage = () => {
                                             onChange={(e) => setNewProduct({ ...newProduct, affiliatefrom: e.target.value })}
                                         >
                                             <option value="">Select product's platform</option>
-                                            <option value="/src/assets/amazonin-logo.jpg">Amazon</option>
-                                            <option value="/src/assets/flipkart.svg">Flipkart</option>
-                                            <option value="/src/assets/Meesho Logo.jpg">Meesho</option>
-                                            <option value="/src/assets/myntra.svg">Myntra</option>
+                                            <option value="/assets/amazonin-logo.jpg">Amazon</option>
+                                            <option value="/assets/flipkart.svg">Flipkart</option>
+                                            <option value="/assets/Meesho Logo.jpg">Meesho</option>
+                                            <option value="/assets/myntra.svg">Myntra</option>
                                         </select>
                                     </div>
 
@@ -445,7 +445,7 @@ const AdminPage = () => {
 
                     </div>
 
-                    <table className=" overflow table table-bordered table-striped table-hover align-middle mt-2 product-table">
+                    <table className=" table table-bordered table-striped table-hover align-middle mt-2 product-table">
                         <thead className="table-dark">
                             <tr className='sticky-top'>
                                 <th className='' style={{ width: '' }}>#</th>
@@ -600,10 +600,10 @@ const AdminPage = () => {
                                                     onChange={(e) => setProductUpdate(prev => ({ ...prev, edit_affiliatefrom: e.target.value }))}
                                                 >
                                                     <option value="bg-warning">Select</option>
-                                                    <option value="/src/assets/amazonin-logo.jpg">Amazon</option>
-                                                    <option value="/src/assets/flipkart.svg">Flipkart</option>
-                                                    <option value="/src/assets/Meesho Logo.jpg">Meesho</option>
-                                                    <option value="/src/assets/myntra.svg">Myntra</option>
+                                                    <option value="/assets/amazonin-logo.jpg">Amazon</option>
+                                                    <option value="/assets/flipkart.svg">Flipkart</option>
+                                                    <option value="/assets/Meesho Logo.jpg">Meesho</option>
+                                                    <option value="/assets/myntra.svg">Myntra</option>
                                                 </select>
                                             </div>
                                             <td>
