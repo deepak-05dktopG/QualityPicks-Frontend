@@ -39,39 +39,40 @@ const App = () => {
     restDelta: 0.001,
   });
 
-  const divRef = useRef(null);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
+  // const divRef = useRef(null);
+  // useEffect(() => {
 
-      // Show button if scrolled more than halfway
-      if (scrollPosition < 500) {
-        divRef.current.style.display = 'none';
-        divRef.current.style.opacity = "0%";
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     const windowHeight = window.innerHeight;
+  //     const documentHeight = document.documentElement.scrollHeight;
 
-      } else {
-        divRef.current.style.display = 'block'; // Hide the div
-        divRef.current.style.opacity = "70%";
-      }
-    };
+  //     // Show button if scrolled more than halfway
+  //     if (scrollPosition < 500) {
+  //       divRef.current.style.display = 'none';
+  //       divRef.current.style.opacity = "0%";
+
+  //     } else {
+  //       divRef.current.style.display = 'block'; // Hide the div
+  //       divRef.current.style.opacity = "50%";
+  //     }
+  //   };
 
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   // Cleanup event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+  // const scrollToTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth',
+  //   });
+  // };
 
 
 
@@ -130,7 +131,7 @@ const App = () => {
 
       <ScrollToTop />
       <div className="d-flex flex-column min-vh-100">
-        <div
+        {/* <div
           ref={divRef}
           style={{
             position: "fixed",
@@ -152,7 +153,7 @@ const App = () => {
           >
             🔝
           </div>
-        </div>
+        </div> */}
 
         <main className="flex-grow-1">
           <Routes>
@@ -169,7 +170,7 @@ const App = () => {
             <Route path="/adminpage" element={<ProtectedRouteforAdmin>  <AdminPage />  </ProtectedRouteforAdmin>} />
           </Routes>
         </main>
-        <Chatbot/>
+        <Chatbot />
       </div>
     </>
   );
