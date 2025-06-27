@@ -9,7 +9,7 @@ function Chatbot() {
     //for chatbot
     useEffect(() => {
         createChat({
-            webhookUrl: 'http://localhost:5678/webhook/b7b6baea-1dd8-4839-a7da-711b3508f1e2/chat',
+            webhookUrl: 'https://n8n-nsao.onrender.com/webhook/a48a9d27-e6d2-406b-a485-cef086ea3ec2/chat',
             webhookConfig: {
                 method: 'POST',
                 headers: {}
