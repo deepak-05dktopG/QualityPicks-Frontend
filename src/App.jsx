@@ -19,9 +19,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion, useScroll, useSpring } from "framer-motion";
 
+//for chatbot
+import '@n8n/chat/style.css';
+import { createChat } from '@n8n/chat';
+
+import Chatbot from './components/Chatbot';
 
 
 const App = () => {
+  //for chatbot
+
+
+
   const location = useLocation();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -125,12 +134,12 @@ const App = () => {
           ref={divRef}
           style={{
             position: "fixed",
-            bottom: "10px",
-            right: "10px",
+            bottom: "80px",
+            right: "23px",
             opacity: "1",
             transition: "opacity 0.3s ease",
           }}
-          className="bg-light shadow rounded-circle d-flex align-items-center justify-content-center"
+          className="bg-light opacity-1 shadow rounded-circle d-flex align-items-center justify-content-center"
         >
           <div
             onClick={scrollToTop}
@@ -160,7 +169,7 @@ const App = () => {
             <Route path="/adminpage" element={<ProtectedRouteforAdmin>  <AdminPage />  </ProtectedRouteforAdmin>} />
           </Routes>
         </main>
-
+        <Chatbot/>
       </div>
     </>
   );
