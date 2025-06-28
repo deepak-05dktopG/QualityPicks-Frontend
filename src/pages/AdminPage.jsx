@@ -11,6 +11,7 @@ const AdminPage = () => {
     const [searchProduct, setSearchProduct] = useState("");
     const [searchCategory, setSearchCategory] = useState("");
     const [messages, setMessages] = useState([]);
+    const [allUsers, setAllUsers] = useState([]);
 
     //product and product update state
     const [productUpdate, setProductUpdate] = useState({
@@ -230,13 +231,50 @@ const AdminPage = () => {
         }
     };
 
+    // getall users
+    const [subject, setSubject] = useState('');
+    const [body, setBody] = useState('');
+
+    const getAllUsers = async () => {
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/users/getAll`);
+        setAllUsers(res.data);
+    };
+    //sending bulk message
+    const handleMassMessage = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/users/send-bulk-email`, { subject, message: body });
+            alert("✅ Emails sent successfully!");
+            setSubject('');
+            setBody('');
+        } catch (err) {
+            alert("❌ Failed to send emails.");
+        }
+    };
+    //Delete Particular User
+    const handleDeleteUser = async (id) => {
+        if (window.confirm('Are you sure you want to delete this user?')) {
+            try {
+                await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/users/delete/${id}`);
+                setAllUsers(prev => prev.filter(user => user._id !== id));
+                alert('User deleted successfully!');
+            } catch (err) {
+                console.error('Error deleting user:', err);
+                alert('Failed to delete user');
+            }
+        }
+    };
+
     //fetching products, category and requests and contact messages on mount
     useEffect(() => {
         fetchProducts();
         fetchCategories();
         fetchRequests();
         fetchMessages();
+        getAllUsers();
     }, []);
+
+
 
     //********************************************Frontend UI************************************************************************************************************************************************8
     return (
@@ -278,6 +316,13 @@ const AdminPage = () => {
                     type="button"
                 >
                     Contact Page Messages
+                </button>
+                <button
+                    className={`btn btn-outline-info ${section === 'messages' ? ' active' : ''}`}
+                    onClick={() => setSection('marketing')}
+                    type="button"
+                >
+                    Manage Users and Marketing
                 </button>
             </div>
 
@@ -997,6 +1042,79 @@ const AdminPage = () => {
                     )}
                 </div>
             )}
+
+            {/* marketing page admin */}
+            {/* Marketing Page Admin */}
+            {section === 'marketing' && (
+                <div>
+                    <h1 className="fw-bold text-primary mb-4">📢 Marketing Dashboard</h1>
+
+                    {/* Send message to all users */}
+                    <div className="card mb-5 shadow-sm border-0">
+                        <div className="card-body">
+                            <h5 className="card-title text-secondary mb-3">Send Email to All Users</h5>
+                            <form onSubmit={handleMassMessage}>
+                                <div className="mb-3">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Enter Subject"
+                                        value={subject}
+                                        onChange={(e) => setSubject(e.target.value)}
+                                        required
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <textarea
+                                        className="form-control"
+                                        placeholder="Enter Message"
+                                        rows={4}
+                                        value={body}
+                                        onChange={(e) => setBody(e.target.value)}
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button type="submit" className="btn btn-primary">
+                                    📤 Send Message to All Users
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    {/* All Users Table */}
+                    <div className="table-responsive mb-5">
+                        <h4 className="text-success mb-3">👥 All Registered Users</h4>
+                        <table className="table table-striped table-hover border">
+                            <thead className="table-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {allUsers.map((user, idx) => (
+                                    <tr key={idx}>
+                                        <td>{idx + 1}</td>
+                                        <td>{user.name}</td>
+                                        <td>{user.email}</td>
+                                        <td>
+                                            <button
+                                                className="btn btn-sm btn-danger"
+                                                onClick={() => handleDeleteUser(user._id)}
+                                            >
+                                                🗑️ Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 };
