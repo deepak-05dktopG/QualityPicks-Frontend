@@ -10,9 +10,9 @@
   --danger: #dc3545;
 
   /* for chatbot */
-  --chat--color-primary: #7b2cbf; /* Soft purple */
-  --chat--color-primary-shade-50: #8e44ec;
-  --chat--color-primary-shade-100: #6f1ab6;
+  --chat--color-primary: #351eb7; /* Soft purple */
+  --chat--color-primary-shade-50: #4c44ec;
+  --chat--color-primary-shade-100: #1a2ab6;
 
   --chat--color-secondary: #ff6f61; /* Coral accent for CTA */
   --chat--color-secondary-shade-50: #ff3d3d;
