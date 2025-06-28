@@ -10,27 +10,29 @@
   --danger: #dc3545;
 
   /* for chatbot */
-  --chat--color-primary: #0d6efd; /* Bootstrap Primary */
-  --chat--color-primary-shade-50: #0b5ed7;
-  --chat--color-primary-shade-100: #0a58ca;
+  --chat--color-primary: #7b2cbf; /* Soft purple */
+  --chat--color-primary-shade-50: #8e44ec;
+  --chat--color-primary-shade-100: #6f1ab6;
 
-  --chat--color-secondary: #ffc107; /* Accent (e.g., buttons) */
-  --chat--color-secondary-shade-50: #e6ac00;
+  --chat--color-secondary: #ff6f61; /* Coral accent for CTA */
+  --chat--color-secondary-shade-50: #ff3d3d;
+
   --chat--color-white: #ffffff;
-  --chat--color-light: #ffffff;
-  --chat--color-light-shade-50: #e9ecef;
-  --chat--color-light-shade-100: #186ec4;
+  --chat--color-light: #f8f9fa;
+  --chat--color-light-shade-50: #e0e0e0;
+  --chat--color-light-shade-100: #cfcfcf;
+
   --chat--color-medium: #adb5bd;
-  --chat--color-dark: #212529;
-  --chat--color-disabled: #6c757d;
-  --chat--color-typing: #343a40;
+  --chat--color-dark: #1e1e2f;
+  --chat--color-disabled: #888888;
+  --chat--color-typing: #444444;
 
   --chat--spacing: 1rem;
   --chat--border-radius: 0.75rem; /* More modern rounded */
   --chat--transition-duration: 0.2s;
 
   --chat--window--width: 400px;
-  --chat--window--height: 600px;
+  --chat--window--height: 100%;
 
   --chat--header-height: auto;
   --chat--header--padding: var(--chat--spacing);
@@ -38,7 +40,7 @@
   --chat--header--color: var(--chat--color-white);
   --chat--heading--font-size: 1.6em;
   --chat--subtitle--font-size: 1em;
-  --chat--subtitle--line-height: 1.6;
+  --chat--subtitle--line-height: ;
 
   --chat--textarea--height: 52px;
 
@@ -60,7 +62,6 @@
   --chat--toggle--color: var(--chat--color-white);
   --chat--toggle--size: 60px;
 }
-
 
 body {
   font-family: "Poppins", sans-serif;
