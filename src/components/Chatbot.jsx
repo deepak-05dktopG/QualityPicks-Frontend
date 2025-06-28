@@ -24,8 +24,6 @@ function Chatbot() {
             defaultLanguage: 'en',
             initialMessages: [
                 'Hi there! 👋',
-                'I’m Riya from QualityPicks 🛍️ Need help picking something awesome ? 😄'
-
             ],
             i18n: {
                 en: {
