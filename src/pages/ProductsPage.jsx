@@ -367,83 +367,167 @@ const ProductsPage = () => {
 
                 (lastSegment === product.category || lastSegment === "all") && (
                   (
-                    <div
-                      data-aos="fade-up"
-                      data-aos-once="false"
-                      key={product._id}
-                      className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-                    >
-                      <div className="card border-0 shadow-sm rounded-4 h-100 overflow-hidden position-relative">
-                        {/* Wishlist & Brand */}
-                        <div
-                          data-aos="zoom-in"
-                          data-aos-once="false"
-                          className="d-flex justify-content-between align-items-center p-2 position-absolute w-100"
-                          style={{ top: 0, left: 0, zIndex: 2 }}
-                        >
-                          <span
-                            className="bg-white shadow-sm p-1 rounded-circle"
-                            style={{ cursor: "pointer" }}
-                          >
-                            {cartItems.some(item => item._id === product._id) ? (
-                              <span onClick={() => handleRemove(product._id)}>💖</span>
-                            ) : (
-                              <span onClick={() => handleAddToCart(product._id)}>🤍</span>
-                            )}
-                          </span>
-                          <img src={product.affiliatefrom} width={30} alt="" />
-                        </div>
-
-                        {/* Image */}
-                        <Link to={`/product/${product._id}`} className="position-relative">
+                    <>
+                      {/* //for large devices */}
+                      <div
+                        data-aos="fade-up"
+                        data-aos-once="false"
+                        key={product._id}
+                        className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4  d-none d-sm-none d-md-block d-lg-block"
+                      >
+                        <div className="card border-0 shadow-sm rounded-4 h-100 overflow-hidden position-relative">
+                          {/* Wishlist & Brand */}
                           <div
-                            style={{
-                              height: "180px",
-                              backgroundImage: `linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(${product.image})`,
-                              backgroundSize: "contain",
-                              backgroundPosition: "center",
-                              backgroundRepeat: "no-repeat",
-                            }}
-                            className="w-100"
-                          ></div>
-                        </Link>
-
-                        {/* Content */}
-                        <div className="card-body d-flex flex-column p-3 bg-light-subtle">
-                          <h6 className="card-title text-truncate text-dark-emphasis fw-semibold">
-                            {product.name}
-                          </h6>
-
-                          <div className="d-flex justify-content-between align-items-center mb-2">
-                            <div className="text-primary fw-bold fs-6">
-                              ₹{product.price.toFixed(2)}
-                            </div>
-                            <div className={`fw-semibold small ${product.stock > 3 ? 'text-success' : 'text-danger'}`}>
-                              {product.stock > 0 ? `Stock: ${product.stock}` : 'Out of Stock'}
-                            </div>
-                          </div>
-
-                          <div className="mb-2">
-                            <span className="text-warning">
-                              {'★'.repeat(Math.round(product.rating))}{" "}
-                            </span>
-                            <span className="text-muted small">({product.reviewCount} reviews)</span>
-                          </div>
-
-                          <p className="card-text small text-secondary mb-2 text-truncate">
-                            {product.description}
-                          </p>
-
-                          <Link
-                            to={`/product/${product._id}`}
-                            className="btn btn-accent mt-auto w-100 fw-semibold shadow-sm"
+                            data-aos="zoom-in"
+                            data-aos-once="false"
+                            className="d-flex justify-content-between align-items-center p-2 position-absolute w-100"
+                            style={{ top: 0, left: 0, zIndex: 2 }}
                           >
-                            Explore & Buy Now
+                            <span
+                              className="bg-white shadow-sm p-1 rounded-circle"
+                              style={{ cursor: "pointer" }}
+                            >
+                              {cartItems.some(item => item._id === product._id) ? (
+                                <span onClick={() => handleRemove(product._id)}>💖</span>
+                              ) : (
+                                <span onClick={() => handleAddToCart(product._id)}>🤍</span>
+                              )}
+                            </span>
+                            <img src={product.affiliatefrom} width={30} alt="" />
+                          </div>
+
+                          {/* Image */}
+                          <Link to={`/product/${product._id}`} className="position-relative">
+                            <div
+                              style={{
+                                height: "180px",
+                                backgroundImage: `linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(${product.image})`,
+                                backgroundSize: "contain",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                              }}
+                              className="w-100 rounded-4 overflow-hidden"
+                            ></div>
                           </Link>
+
+                          {/* Content */}
+                          <div className="card-body d-flex flex-column p-3 bg-light-subtle">
+                            <h6 className="card-title text-truncate text-dark-emphasis fw-semibold">
+                              {product.name}
+                            </h6>
+
+                            <div className="d-flex justify-content-between align-items-center mb-2">
+                              <div className="text-primary fw-bold fs-6">
+                                ₹{product.price.toFixed(2)}
+                              </div>
+                              <div className={`fw-semibold small ${product.stock > 3 ? 'text-success' : 'text-danger'}`}>
+                                {product.stock > 0 ? `Stock: ${product.stock}` : 'Out of Stock'}
+                              </div>
+                            </div>
+
+                            <div className="mb-2">
+                              <span className="text-warning">
+                                {'★'.repeat(Math.round(product.rating))}{" "}
+                              </span>
+                              <span className="text-muted small">({product.reviewCount} reviews)</span>
+                            </div>
+
+                            <p className="card-text small text-secondary mb-2 text-truncate">
+                              {product.description}
+                            </p>
+
+                            <Link
+                              to={`/product/${product._id}`}
+                              className="btn btn-accent mt-auto w-100 fw-semibold shadow-sm"
+                            >
+                              Explore & Buy Now
+                            </Link>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
+                      {/* //for small devices */}
+                      <div
+                        data-aos="fade-up"
+                        data-aos-once="false"
+                        key={product._id}
+                        className="col-6 col-sm-6 col-md-4 col-lg-3 mb-4  d-sm-block d-md-none d-lg-none"
+                      >
+
+                        <div className="card border-0 shadow-sm rounded-4 h-100 overflow-hidden position-relative">
+                          {/* Wishlist & Brand */}
+                          <div
+                            data-aos="zoom-in"
+                            data-aos-once="false"
+                            className="d-flex justify-content-between align-items-center p-2 position-absolute w-100"
+                            style={{ top: 0, left: 0, zIndex: 2 }}
+                          >
+                            <span
+                              className="bg-white shadow-sm p-1 rounded-circle"
+                              style={{ cursor: "pointer" }}
+                            >
+                              {cartItems.some(item => item._id === product._id) ? (
+                                <span onClick={() => handleRemove(product._id)}>💖</span>
+                              ) : (
+                                <span onClick={() => handleAddToCart(product._id)}>🤍</span>
+                              )}
+                            </span>
+                            <img src={product.affiliatefrom} width={30} alt="" />
+                          </div>
+
+                          {/* Image */}
+                          <Link to={`/product/${product._id}`} className="position-relative">
+                            <div
+                              style={{
+                                height: "180px",
+                                backgroundImage: `linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(${product.image})`,
+                                backgroundSize: "contain",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                              }}
+                              className="w-100 rounded-4 overflow-hidden"
+                            ></div>
+                          </Link>
+
+                          {/* Content */}
+                          <div className="card-body d-flex flex-column p-3 bg-light-subtle">
+                            <h6 className="card-title text-truncate text-dark-emphasis fw-semibold">
+                              {product.name}
+                            </h6>
+
+                            <div className="d-flex justify-content-between align-items-center mb-2">
+                              <div className="text-primary fw-bold fs-6">
+                                ₹{product.price.toFixed(2)}
+                              </div>
+                              <div className={`fw-semibold small ${product.stock > 3 ? 'text-success' : 'text-danger'}`}>
+                                {product.stock > 0 ? `Stock: ${product.stock}` : 'Out of Stock'}
+                              </div>
+                            </div>
+
+                            <div className="mb-2 d-flex align-items-center flex-nowrap">
+                              <span className="text-warning">
+                                {'★'.repeat(Math.round(product.rating))}{" "}
+                              </span>
+                              <span className="text-muted fw-small small  "> <small className='text-nowrap'>({product.reviewCount} reviews)</small></span>
+                            </div>
+
+                            <p className="card-text small text-secondary mb-2 text-truncate">
+                              {product.description}
+                            </p>
+
+                            <Link
+                              to={`/product/${product._id}`}
+                              className="btn btn-sm btn-accent mt-auto w-100 fw-semibold shadow-sm"
+                            >
+                              Explore & Buy Now
+                            </Link>
+                          </div>
+                        </div>
+
+
+                        
+                      </div>
+                    </>
                   )
                 )
 

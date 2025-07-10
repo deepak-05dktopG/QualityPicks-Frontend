@@ -124,7 +124,7 @@ const ProductDetailsPage = () => {
       <div className="container py-5">
         <nav aria-label="breadcrumb" className="mb-4">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item"><Link to="/main">Home</Link></li>
+            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
             <li className="breadcrumb-item">
               <Link to={`/products/${product.category}`}>
                 {product.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
