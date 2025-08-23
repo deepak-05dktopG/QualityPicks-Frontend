@@ -370,7 +370,7 @@ const ProductsPage = () => {
                     <>
                       {/* //for large devices */}
                       <div
-                        data-aos="fade-up"
+                        // data-aos="fade-up"
                         data-aos-once="false"
                         key={product._id}
                         className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4  d-none d-sm-none d-md-block d-lg-block"
