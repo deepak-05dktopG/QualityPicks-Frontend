@@ -265,7 +265,7 @@ const ContactPage = () => {
                             className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                             id="name"
                             name="name"
-                            placeholder="e.g. Deepakkumar"
+                            placeholder="e.g. name"
                             value={formData.name}
                             onChange={handleChange}
                             required
@@ -281,7 +281,7 @@ const ContactPage = () => {
                             className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                             id="email"
                             name="email"
-                            placeholder="e.g. deepak@example.com"
+                            placeholder="e.g. abcd@example.com"
                             value={formData.email}
                             onChange={handleChange}
                             required

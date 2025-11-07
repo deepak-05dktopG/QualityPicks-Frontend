@@ -279,7 +279,7 @@ const RequestProductPage = () => {
                         className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                         id="name"
                         name="name"
-                        placeholder='e.g. Deepakkumar'
+                        placeholder='e.g. name'
                         value={formData.name}
                         onChange={handleChange}
                       />
