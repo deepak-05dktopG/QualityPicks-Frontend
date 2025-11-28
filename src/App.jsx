@@ -170,7 +170,7 @@ const App = () => {
             <Route path="/adminpage" element={<ProtectedRouteforAdmin>  <AdminPage />  </ProtectedRouteforAdmin>} />
           </Routes>
         </main>
-        <Chatbot />
+        {/* <Chatbot /> */}
       </div>
     </>
   );
