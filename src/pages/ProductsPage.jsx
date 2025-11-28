@@ -30,7 +30,7 @@ const ProductsPage = () => {
     product.affiliateLink.toLowerCase().includes(searchTerm.toLowerCase()) ||
     product.price.toString().includes(searchTerm)
   );
-  //Speech to Tex
+  //Speech to Text
   const handleVoiceSearch = () => {
     const recognition = new window.webkitSpeechRecognition(); // for Chrome
     recognition.continuous = false;
